@@ -13,6 +13,7 @@ export class AboutComponent {
 
 constructor(private httpClientService:CustomHttpClient) {
   this.getAbout(); 
+  // this.getAboutById("2"); 
   // this.createAbout({description:"example description",imageUrl:"example imageUrl",title:"example title"})
   // this.updateAbout({aboutId:2,description:"example description",imageUrl:"example imageUrl",title:"example title"});
   //  this.deleteAbout("5");
@@ -22,6 +23,16 @@ constructor(private httpClientService:CustomHttpClient) {
 getAbout(){
   this.httpClientService.get<About>({controller:"abouts"}).subscribe({
     next:(data)=>{
+      this.allAboutData=data;
+    },
+    error:err=>{
+    }
+  })
+}
+getAboutById(aboutId:string){
+  this.httpClientService.get<About>({controller:"abouts"},aboutId).subscribe({
+    next:(data)=>{
+      console.log(data);
       this.allAboutData=data;
     },
     error:err=>{

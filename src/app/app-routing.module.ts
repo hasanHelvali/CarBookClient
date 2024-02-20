@@ -10,20 +10,21 @@ import { IndexComponent } from './ui/index/index.component';
 import { MainComponent } from './ui/main/main.component';
 import { PricingComponent } from './ui/pricing/pricing.component';
 import { ServisComponent } from './ui/servis/servis.component';
-import { UiComponent } from './ui/ui.component';
+import { DefaultComponent } from './ui/default/default.component';
 
 const routes: Routes = [
   {path:"",component:IndexComponent},
+  {path:"default",component:DefaultComponent},
   {path:"blog",component:BlogComponent},
   {path:"blog-single",component:BlogSingleComponent},
   {path:"car",component:CarComponent},
   {path:"car-single",component:CarSingleComponent},
   {path:"contact",component:ContactComponent},
-  {path:"index",component:IndexComponent},
   {path:"main",component:MainComponent},
   {path:"pricing",component:PricingComponent},
   {path:"servis",component:ServisComponent},
   {path:"about",component:AboutComponent},
+  {path:"index",component:IndexComponent},
   {path:"**",component:IndexComponent},
 
 ];

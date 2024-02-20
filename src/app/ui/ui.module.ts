@@ -15,6 +15,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ServisComponent } from './servis/servis.component';
 import { RouterModule } from '@angular/router';
 import { TestimonialComponent } from './about/testimonial/testimonial.component';
+import { DefaultComponent } from './default/default.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TestimonialComponent } from './about/testimonial/testimonial.component'
     UiComponent,
     ServisComponent,
     TestimonialComponent,
+    DefaultComponent,
   ],
   imports: [
     CommonModule,

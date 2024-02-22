@@ -6,6 +6,7 @@ import { Last5CarsWithBrand } from '../models/last5CarsWithBrand';
 import { About } from '../models/about';
 import { Servis } from '../models/servis';
 import { Testimonial } from '../models/testimonial';
+import { Last3BlogsWithAuthors } from '../models/last3BlogsWithAuthors';
 
 @Component({
   selector: 'app-index',
@@ -20,10 +21,12 @@ export class IndexComponent {
     this.getAbout();
     this.getService();
     this.getTestimonial();
+    this.getLast3BlogsAndAuthors();
   }
 
   allBannersData:Banner[];
   last5CarsWithBrand:Last5CarsWithBrand[];
+  last3BlogsWithAuthors:Last3BlogsWithAuthors[];
   allAboutData:About[];
   allServices:Servis[];
   allTestimonialsData:Testimonial[];
@@ -86,7 +89,19 @@ export class IndexComponent {
       }
     })
   }
-  
+  getLast3BlogsAndAuthors(){
+    this.httpClientService.get<Last3BlogsWithAuthors>({
+      controller:"blogs",
+      action:"GetLast3BlogsWithAuthorsList"
+    }).subscribe({
+      next:(data)=>{
+        this.last3BlogsWithAuthors=data
+      },
+      error:(err)=>{
+
+      }
+    })
+  }
   createBanner(banner:Banner){
     this.httpClientService.post({controller:"banners"},banner).subscribe({
       next:(data)=>{

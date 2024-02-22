@@ -15,7 +15,7 @@ import { DefaultComponent } from './ui/default/default.component';
 const routes: Routes = [
   {path:"",component:IndexComponent},
   {path:"default",component:DefaultComponent},
-  {path:"blog",component:BlogComponent},
+  {path:"blog",component:BlogSingleComponent},
   {path:"blog-single",component:BlogSingleComponent},
   {path:"car",component:CarComponent},
   {path:"car-single",component:CarSingleComponent},

@@ -24,4 +24,9 @@ export class BlogComponent {
       }
     })
   }
+
+   blogDetail(id:number)
+  {
+    
+  }
 }

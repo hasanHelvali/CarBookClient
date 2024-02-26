@@ -12,42 +12,40 @@
     </section>
 
 
-    <section class="ftco-section ftco-degree-bg">
+    <section class="">
       <div class="container">
         <div class="row">
-          <!-- Blog Detail Content -->
-          <div class="col-md-8 ">
-            <h3 class="mb-3">It is a long established fact a reader be distracted</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, eius mollitia suscipit, quisquam doloremque
-               distinctio perferendis et doloribus unde architecto optio laboriosam porro adipisci sapiente officiis nemo accusamus
-                ad praesentium? Esse minima nisi et. Dolore perferendis, enim praesentium omnis, iste doloremque quia officia optio deserunt 
-                molestiae voluptates soluta architecto tempora.
-              </p>
-            <p>
-              <img src="../../../assets/images/image_5.jpg" alt="" class="img-fluid">
-            </p>
+          <!-- <div *ngFor="let _blog of blog" class="col-md-8 "> -->
+            <div  class="col-md-8 ">
+              <!-- <div *ngFor="let item of allBlog"> -->
+                <div>
+                <h3 class="mb-3"> {{allBlog['title']}} </h3>
+                <p>{{allBlog['description']}}</p>
+                <p>
+                  <img  [src]="img" alt="" class="img-fluid">
+                </p>
+              </div>
 
             <div class="tag-widget post-tag-container mb-5 mt-5">
               <div class="tagcloud">
-                <a routerLink="#" class="tag-cloud-link">Life</a>
-                <a routerLink="#" class="tag-cloud-link">Sport</a>
-                <a routerLink="#" class="tag-cloud-link">Tech</a>
-                <a routerLink="#" class="tag-cloud-link">Travel</a>
+                <a *ngFor="let tagCloud of allTagClouds" routerLink="#" class="tag-cloud-link">{{tagCloud.title}}</a>
               </div>
             </div>
-            
+
+            <!-- Yazar Hakkında -->
             <div class="about-author d-flex p-4 bg-light">
-              <div class="bio mr-5">
-                <img src="../../../assets/images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
-              </div>
-              <div class="desc">
-                <h3>George Washington</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, 
-                  sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
+              <div *ngFor="let item of getBlogByAuthor">
+                <div class="bio mr-5">
+                  <img src="{{item.authorImageUrl}}" alt="" class="img-fluid mb-4">
+                </div>
+                <div   class="desc">
+                  <h3>{{item.authorName}}</h3>
+                  <p>{{item.authorDescription}}</p>
+                </div>
               </div>
             </div>
 
-
+            <!-- Yorumlar -->
             <div class="pt-5 mt-5">
               <h3 class="mb-5">6 Comments</h3>
               <ul class="comment-list">
@@ -132,6 +130,7 @@
               </ul>
               <!-- END comment-list -->
               
+              <!-- Yorum Yapma Alanı -->
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
                 <form action="#" class="p-5 bg-light">
@@ -161,6 +160,8 @@
             </div>
 
           </div> <!-- .col-md-8 -->
+
+
           <div class="col-md-4 sidebar ">
             <!-- Arama Kutusu -->
             <div class="sidebar-box">
@@ -175,27 +176,24 @@
             <!-- Kategoriler -->
             <div class="sidebar-box ">
               <div class="categories">
-                <h3>Categories</h3>
-                <li><a routerLink="#">Ferrari <span>(12)</span></a></li>
-                <li><a routerLink="#">Cheverolet <span>(22)</span></a></li>
-                <li><a routerLink="#">Ford <span>(37)</span></a></li>
-                <li><a routerLink="#">Subaru <span>(42)</span></a></li>
-                <li><a routerLink="#">Toyota <span>(14)</span></a></li>
-                <li><a routerLink="#">Mistsubishi <span>(140)</span></a></li>
+                <h3>Kategoriler</h3>
+                <li *ngFor="let category of allCategories">
+                  <a routerLink="#">{{category?.name}} <span>(12)</span>
+                  </a></li>
               </div>
             </div>
 
             <!-- Son bloklar -->
             <div class="sidebar-box ">
               <h3>Son Bloglar</h3>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(../../../assets/images/image_1.jpg);"></a>
+              <div *ngFor="let last3Blogs of allLast3BlogsWithAuthors" class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({{last3Blogs.coverImageUrl}});"></a>
                 <div class="text">
-                  <h3 class="heading"><a routerLink="#">Why Lead Generation is Key for Business Growth</a></h3>
+                  <h3 class="heading"><a routerLink="#">{{last3Blogs.title}}</a></h3>
                   <div class="meta">
-                    <div><a routerLink="#"><span class="icon-calendar"></span>Oct. 29, 2019</a></div>
-                    <div><a routerLink="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a routerLink="#"><span class="icon-chat"></span> 19</a></div>
+                    <div><a routerLink="#"><span ><i class="bi bi-calendar-day"></i></span>   {{last3Blogs.createdDate | date:'dd MMMM yyyy'}}</a></div>|
+                    <div><a routerLink="#"><span><i class="bi bi-person-circle"></i></span>   {{last3Blogs.authorName}}</a></div>|
+                    <div><a routerLink="#"><span><i class="bi bi-chat-left-text-fill"></i></span>    0</a></div>
                   </div>
                 </div>
               </div>
@@ -205,14 +203,7 @@
             <div class="sidebar-box ">
               <h3>Etiket Bulutu</h3>
               <div class="tagcloud">
-                <a routerLink="#" class="tag-cloud-link">dish</a>
-                <a routerLink="#" class="tag-cloud-link">menu</a>
-                <a routerLink="#" class="tag-cloud-link">food</a>
-                <a routerLink="#" class="tag-cloud-link">sweet</a>
-                <a routerLink="#" class="tag-cloud-link">tasty</a>
-                <a routerLink="#" class="tag-cloud-link">delicious</a>
-                <a routerLink="#" class="tag-cloud-link">desserts</a>
-                <a routerLink="#" class="tag-cloud-link">drinks</a>
+                <a *ngFor="let item of allTagClouds" routerLink="#" class="tag-cloud-link">{{item.title}}</a>
               </div>
             </div>
 

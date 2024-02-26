@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:"",component:IndexComponent},
   {path:"default",component:DefaultComponent},
   {path:"blog",component:BlogComponent},
-  {path:"blog-single",component:BlogSingleComponent},
+  {path:"blog/blog-single/:id",component:BlogSingleComponent},
   {path:"car",component:CarComponent},
   {path:"car-single",component:CarSingleComponent},
   {path:"contact",component:ContactComponent},

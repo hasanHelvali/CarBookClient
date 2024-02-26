@@ -8,4 +8,6 @@ export class AllBlogsWithAuthors {
   description: string;
   authorName: string;
   categoryName: string;
+  authorDescription:string;
+  authorImageUrl:string;
 }

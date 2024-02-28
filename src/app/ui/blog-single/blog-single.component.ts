@@ -22,6 +22,7 @@ export class BlogSingleComponent implements OnInit {
   authorId:string;
   getBlogByAuthor:GetAuthorByBlogId[]=[];
   img:string;
+  comments:Comment[]=[];
   constructor(private httpClientService:CustomHttpClient,private route:ActivatedRoute) {
        this.route.params.subscribe({
       next:(data)=>{
@@ -36,6 +37,7 @@ export class BlogSingleComponent implements OnInit {
    this.getAllRecentBlog(); 
    this.getTagCloudsByBlogId(); 
    this.getAboutAuthor(); 
+   this.getAllComment(); 
   }
   async ngOnInit() {
 
@@ -94,7 +96,16 @@ export class BlogSingleComponent implements OnInit {
     this.httpClientService.get<GetAuthorByBlogId>({controller:"blogs",action:"GetBlogByAuthorIdList"},this.blogId).subscribe({
       next:(data)=>{
         this.getBlogByAuthor=data
-        console.log(data);
+      },
+      error:(err)=>{
+      }
+    })
+  }
+
+  getAllComment(){
+    this.httpClientService.get<Comment>({controller:"comments"}).subscribe({
+      next:(data)=>{
+        this.comments=data
       },
       error:(err)=>{
       }

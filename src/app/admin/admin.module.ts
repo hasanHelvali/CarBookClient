@@ -49,6 +49,12 @@ import { UiTabsComponent } from './ui-tabs/ui-tabs.component';
 import { UiToastrComponent } from './ui-toastr/ui-toastr.component';
 import { UiTooltipsPopoversComponent } from './ui-tooltips-popovers/ui-tooltips-popovers.component';
 import { UiTypographyComponent } from './ui-typography/ui-typography.component';
+import { Page404Component } from './page404/page404.component';
+import { Page500Component } from './page500/page500.component';
+import { PageLockScreenComponent } from './page-lock-screen/page-lock-screen.component';
+import { PageLoginComponent } from './page-login/page-login.component';
+import { PagesRecoverPwComponent } from './pages-recover-pw/pages-recover-pw.component';
+import { PagesRegisterComponent } from './pages-register/pages-register.component';
 
 
 
@@ -102,7 +108,13 @@ import { UiTypographyComponent } from './ui-typography/ui-typography.component';
     UiTabsComponent,
     UiToastrComponent,
     UiTooltipsPopoversComponent,
-    UiTypographyComponent
+    UiTypographyComponent,
+    Page404Component,
+    Page500Component,
+    PageLockScreenComponent,
+    PageLoginComponent,
+    PagesRecoverPwComponent,
+    PagesRegisterComponent
   ],
   imports: [
     CommonModule

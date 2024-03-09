@@ -38,10 +38,35 @@
               "./node_modules/customLib/jquery.timepicker.css",
               "./node_modules/customLib/magnific-popup.css",
               "./node_modules/customLib/owl.theme.default.min.css",
-              "./node_modules/customLib/style.css"
-
+              "./node_modules/customLib/style.css",
+              "./src/assets/adminAssets/css/theme.min.css",
+              "./src/assets/adminAssets/css/icons.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./src/assets/adminAssets/js/metismenu.min.js",
+              "./src/assets/adminAssets/js/waves.js",
+              "./src/assets/adminAssets/js/simplebar.min.js",
+              "./src/assets/adminAssets/js/theme.js",
+              "./src/assets/adminAssets/pages/dashboard-demo.js",
+              "./src/assets/adminAssets/pages/datatables-demo.js",
+              "./src/assets/adminAssets/plugins/datatables/jquery.dataTables.min.js",
+              "./src/assets/adminAssets/plugins/datatables/dataTables.bootstrap4.js",
+              "./src/assets/adminAssets/plugins/datatables/dataTables.responsive.min.js",
+              "./src/assets/adminAssets/plugins/datatables/responsive.bootstrap4.min.js",
+              "./src/assets/adminAssets/plugins/datatables/dataTables.buttons.min.js",
+              "./src/assets/adminAssets/plugins/datatables/buttons.bootstrap4.min.js",
+              "./src/assets/adminAssets/plugins/datatables/buttons.html5.min.js",
+              "./src/assets/adminAssets/plugins/datatables/buttons.flash.min.js",
+              "./src/assets/adminAssets/plugins/datatables/buttons.print.min.js",
+              "./src/assets/adminAssets/plugins/datatables/dataTables.keyTable.min.js",
+              "./src/assets/adminAssets/plugins/datatables/dataTables.select.min.js",
+              "./src/assets/adminAssets/plugins/datatables/pdfmake.min.js",
+              "./src/assets/adminAssets/plugins/datatables/vfs_fonts.js",
+              "./src/assets/adminAssets/plugins/raphael/raphael.min.js",
+              "./src/assets/adminAssets/plugins/morris-js/morris.min.js"
+            ]
           },
           "configurations": {
             "production": {

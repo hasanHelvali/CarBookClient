@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UIModule } from './ui/ui.module';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AdminModule } from './admin/admin.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { CommonModule } from '@angular/common';
     RouterModule,
     AppRoutingModule,
     HttpClientModule, 
-    CommonModule
+    CommonModule,
+    AdminModule
   ],
   providers: [
   {provide:"baseUrl", useValue:"https://localhost:7182/api",multi:true }

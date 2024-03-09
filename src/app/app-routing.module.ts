@@ -11,6 +11,8 @@ import { MainComponent } from './ui/main/main.component';
 import { PricingComponent } from './ui/pricing/pricing.component';
 import { ServisComponent } from './ui/servis/servis.component';
 import { DefaultComponent } from './ui/default/default.component';
+import { PagesStarterComponent } from './admin/pages-starter/pages-starter.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path:"",component:IndexComponent},
@@ -25,6 +27,7 @@ const routes: Routes = [
   {path:"servis",component:ServisComponent},
   {path:"about",component:AboutComponent},
   {path:"index",component:IndexComponent},
+  {path:"admin",component:AdminComponent},
   {path:"**",component:IndexComponent},
 
 ];

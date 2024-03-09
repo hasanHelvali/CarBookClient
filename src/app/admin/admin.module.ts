@@ -1,12 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
-import { AuthLockScreenComponent } from './auth-lock-screen/auth-lock-screen.component';
-import { AuthLoginComponent } from './auth-login/auth-login.component';
-import { AuthRecoverPwComponent } from './auth-recover-pw/auth-recover-pw.component';
-import { AuthRegisterComponent } from './auth-register/auth-register.component';
-import { Auth400Component } from './auth400/auth400.component';
-import { Auth500Component } from './auth500/auth500.component';
 import { CalenderComponent } from './calender/calender.component';
 import { ChartsChartjsComponent } from './charts-chartjs/charts-chartjs.component';
 import { ChartsGoogleComponent } from './charts-google/charts-google.component';
@@ -18,7 +12,7 @@ import { FormsMaskComponent } from './forms-mask/forms-mask.component';
 import { FormsPluginComponent } from './forms-plugin/forms-plugin.component';
 import { FormsQuilljsComponent } from './forms-quilljs/forms-quilljs.component';
 import { FormsUploadsComponent } from './forms-uploads/forms-uploads.component';
-import { FormsValidationComponent } from './forms-validation/forms-validation.component';
+// import { FormsValidationComponent } from './forms-validation/forms-validation.component';
 import { IconsDripiconsComponent } from './icons-dripicons/icons-dripicons.component';
 import { IconsFeatherComponent } from './icons-feather/icons-feather.component';
 import { IconsFontawesomeComponent } from './icons-fontawesome/icons-fontawesome.component';
@@ -55,18 +49,18 @@ import { PageLockScreenComponent } from './page-lock-screen/page-lock-screen.com
 import { PageLoginComponent } from './page-login/page-login.component';
 import { PagesRecoverPwComponent } from './pages-recover-pw/pages-recover-pw.component';
 import { PagesRegisterComponent } from './pages-register/pages-register.component';
-
-
+import { AdminHeaderComponent } from './layout/admin-header/admin-header.component';
+import { VerticalMenuComponent } from './layout/vertical-menu/vertical-menu.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
-    Auth400Component,
-    Auth500Component,
-    AuthLockScreenComponent,
-    AuthLoginComponent,
-    AuthRecoverPwComponent,
-    AuthRegisterComponent,
+    // Auth400Component,
+    // Auth500Component,
+    // AuthLockScreenComponent,
+    // AuthLoginComponent,
+    // AuthRecoverPwComponent,
+    // AuthRegisterComponent,
     CalenderComponent,
     ChartsChartjsComponent,
     ChartsGoogleComponent,
@@ -78,7 +72,7 @@ import { PagesRegisterComponent } from './pages-register/pages-register.componen
     FormsPluginComponent,
     FormsQuilljsComponent,
     FormsUploadsComponent,
-    FormsValidationComponent,
+    // FormsValidationComponent,
     IconsDripiconsComponent,
     IconsFeatherComponent,
     IconsFontawesomeComponent,
@@ -114,10 +108,14 @@ import { PagesRegisterComponent } from './pages-register/pages-register.componen
     PageLockScreenComponent,
     PageLoginComponent,
     PagesRecoverPwComponent,
-    PagesRegisterComponent
+    PagesRegisterComponent,
+    // AdminHeaderComponent
+    AdminHeaderComponent,
+    VerticalMenuComponent,
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports:[AdminComponent,IndexComponent]
 })
 export class AdminModule { }
